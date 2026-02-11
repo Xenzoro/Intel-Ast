@@ -200,12 +200,145 @@
       </section>
 
       <!-- ==================== FOOTER ==================== -->
-      <footer class="scroll-hint">
+      <section class="scroll-hint">
         <p>Scroll to view timeline | Hover over cards to learn more!</p>
-      </footer>
+      </section>
+        <!-- 3-Column Content Section -->
+        <section>
+            <div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h2>RISE Strategy</h2>
+                    <p>
+                        Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
+                        Intel sets ambitious 2030 goals, including driving industry-wide
+                        progress on climate action, water stewardship, and waste reduction.
+                    </p>
+                    <!-- Learn More Button -->
+                    <a href="#">Learn More</a>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h2>Commitment</h2>
+                    <p>
+                        In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
+                        (Scope 1 and 2) by 2040. This commitment builds on decades of
+                        environmental initiatives and partnerships across the semiconductor
+                        industry.
+                    </p>
+                    <!-- Learn More Button -->
+                    <a href="#">Learn More</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h2>Water &amp; Waste</h2>
+                    <p>
+                        Intel conserves billions of gallons of water annually and
+                        collaborates with local communities to restore watersheds.
+                        Intel also upcycles and recycles materials to reduce waste and
+                        advance a circular economy.
+                    </p>
+                    <!-- Learn More Button -->
+                    <a href="#">Learn More</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Subscription Form -->
+        <section>
+            <h2>Subscribe to our Newsletter</h2>
+            <!-- Add form here -->
+        </section>
+
+
 
     </main>
 
+    <script>
+      // List of RTL language codes
+      const rtlLanguages = ['ar', 'he', 'fa', 'ur', 'yi', 'iw'];
+
+      // Function to check if current language is RTL
+      //copied from command in learning video
+      function isRTLLanguage() {
+        // Check the lang attribute on html or body
+        const htmlLang = document.documentElement.lang || document.body.lang || '';
+        const langCode = htmlLang.split('-')[0].toLowerCase();
+
+        // Check if it's an RTL language
+        if (rtlLanguages.includes(langCode)) {
+          return true;
+        }
+
+        // Check Google Translate's language attribute
+        const translateElement = document.querySelector('.translated-ltr, .translated-rtl');
+        if (translateElement && translateElement.classList.contains('translated-rtl')) {
+          return true;
+        }
+
+        return false;
+      }
+
+      // Function to apply or remove RTL mode
+      function applyRTLMode() {
+        if (isRTLLanguage()) {
+          document.documentElement.setAttribute('dir', 'rtl');
+          document.body.setAttribute('dir', 'rtl');
+        } else {
+          document.documentElement.setAttribute('dir', 'ltr');
+          document.body.setAttribute('dir', 'ltr');
+        }
+      }
+
+      // Initial check
+      applyRTLMode();
+
+      // Watch for changes to the lang attribute
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' &&
+              (mutation.attributeName === 'lang' ||
+               mutation.attributeName === 'class')) {
+            applyRTLMode();
+          }
+        });
+      });
+
+      // Observe changes to html and body elements
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['lang', 'class']
+      });
+
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['lang', 'class']
+      });
+
+      // Also watch for Google Translate widget changes
+      const checkForTranslate = setInterval(() => {
+        const translateElement = document.querySelector('.goog-te-banner-frame, .translated-ltr, .translated-rtl');
+        if (translateElement) {
+          applyRTLMode();
+          // Continue checking for language changes
+          const translateObserver = new MutationObserver(() => {
+            applyRTLMode();
+          });
+          translateObserver.observe(document.body, {
+            attributes: true,
+            attributeFilter: ['class'],
+            subtree: true
+          });
+        }
+      }, 500);
+
+      // Stop checking after 10 seconds
+      setTimeout(() => clearInterval(checkForTranslate), 10000);
+    </script>
 
   </body>
 </html>
