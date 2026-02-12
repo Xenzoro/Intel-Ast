@@ -262,12 +262,12 @@ ul {
   font-size: 0.9rem;
   font-style: italic;
 }
-.h5-blue{
+
+.accordion-title {
   color: #0071c5;
-    font-size: 1.2rem;
-
-
+  font-size: 1.2rem;
 }
+
 .accordion-section {
     padding: 3rem;
 }
@@ -290,10 +290,10 @@ ul {
   border-color : #0071c5;
   background-color: #0071c5;
 }
-.accordion-button:focus h5 {
+.accordion-button:focus .accordion-title {
     color: #fff;
 }
-.accordion-button:not(.collapsed) h5 {
+.accordion-button:not(.collapsed) .accordion-title {
     color: #fff;
 }
 .accordion-button:not(.collapsed){
@@ -328,6 +328,7 @@ ul {
 }
 .col-4 h2{
   color: #0071c5;
+  font-size: 1.2rem;
 }
 
 .col-4 h2 i {
