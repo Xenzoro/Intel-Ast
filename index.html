@@ -298,19 +298,19 @@
 <!--          tried to change "row" to "row g-4" to give more gap but that did not work so I just did it with css-->
           <div class="row">
                 <div class="col-4">
-                    <h2><i class="fa-solid fa-chart-line"></i> RISE Strategy</h2>
+                    <h2><i class="fa-solid fa-chart-line" aria-hidden="true"></i> RISE Strategy</h2>
                     <p>
                         Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
                         Intel sets ambitious 2030 goals, including driving industry-wide
                         progress on climate action, water stewardship, and waste reduction.
                     </p>
                     <!-- Learn More Button -->
-                    <a href="#">Learn More</a>
+                    <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/corporate-responsibility.html" aria-label="Learn more about Intel's RISE Strategy">Learn More</a>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="col-4">
-                    <h2><i class="fa-solid fa-handshake"></i> Commitment</h2>
+                    <h2><i class="fa-solid fa-handshake" aria-hidden="true"></i> Commitment</h2>
                     <p>
                         In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
                         (Scope 1 and 2) by 2040. This commitment builds on decades of
@@ -318,12 +318,12 @@
                         industry.
                     </p>
                     <!-- Learn More Button -->
-                    <a href="#">Learn More</a>
+                    <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/climate-change.html" aria-label="Learn more about Intel's net-zero commitment">Learn More</a>
                 </div>
 
                 <!-- Column 3 -->
                 <div class="col-4">
-                    <h2><i class="fa-solid fa-droplet"></i> Water &amp; Waste</h2>
+                    <h2><i class="fa-solid fa-droplet" aria-hidden="true"></i> Water &amp; Waste</h2>
                     <p>
                         Intel conserves billions of gallons of water annually and
                         collaborates with local communities to restore watersheds.
@@ -331,32 +331,32 @@
                         advance a circular economy.
                     </p>
                     <!-- Learn More Button -->
-                    <a href="#">Learn More</a>
+                    <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/water-management.html" aria-label="Learn more about Intel's water and waste management">Learn More</a>
                 </div>
             </div>
         </section>
 
         <!-- Subscription Form -->
-        <section class="subscription-section container">
-            <h2>Subscribe to our Newsletter</h2>
-            <form>
+        <section class="subscription-section container" aria-labelledby="newsletter-heading">
+            <h2 id="newsletter-heading">Subscribe to our Newsletter</h2>
+            <form aria-label="Newsletter subscription form">
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required aria-required="true">
                 </div>
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required aria-required="true">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email address" required aria-required="true">
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="consent">
+                    <input type="checkbox" class="form-check-input" id="consent" required aria-required="true">
                     <label class="form-check-label" for="consent">I consent to receive communications about Intel's sustainability activities</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
 </form>
         </section>
 
@@ -370,9 +370,9 @@
             <div class="footer-content">
                 <p>&copy; 2026 Intel Corporation. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Contact Us</a>
+                    <a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy Policy</a>
+                    <a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html">Terms of Use</a>
+                    <a href="https://www.intel.com/content/www/us/en/support/contact-support.html">Contact Us</a>
                 </div>
             </div>
         </div>
