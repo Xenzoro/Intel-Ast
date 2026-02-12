@@ -406,6 +406,11 @@
 
       // Function to apply or remove RTL mode
       function applyRTLMode() {
+        // Always ensure lang attribute exists
+        if (!document.documentElement.lang) {
+          document.documentElement.lang = 'en';
+        }
+
         if (isRTLLanguage()) {
           document.documentElement.setAttribute('dir', 'rtl');
           document.body.setAttribute('dir', 'rtl');
