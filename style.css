@@ -154,7 +154,7 @@ body {
 }
 
 .timeline-card:hover {
-  transform: rotate(0deg) translateY(-15px) scale(1.05);
+  transform: rotate(0deg) translateY(-15px) scale(1.08);
   box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.2),
     0 16px 40px rgba(0, 0, 0, 0.25);
@@ -174,7 +174,7 @@ body {
 }
 
 .timeline-card:hover .card-image {
-  transform: scale(1.08);
+  transform: scale(1.03);
 }
 
 /* Card content section - caption area below photo */
@@ -255,6 +255,16 @@ body {
   color: #666;
   font-size: 0.9rem;
   font-style: italic;
+}
+.accordion-section {
+    padding: 3rem;
+}
+
+.accordion{
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+
 }
 
 /* ========================================
